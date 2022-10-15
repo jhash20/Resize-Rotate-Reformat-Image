@@ -20,6 +20,6 @@ for root, dirs, files in os.walk(".")
             new_im = im.rotate(-90)
             new_im = im.convert('RGB')
             # save image as JPEG in correct directory
-            new_im = im.save(new_path) + str(f) + ".jpg")
+            new_im = im.save(new_path + str(f) + ".jpg")
         except OSError:
             print("cannot convert", infile)
