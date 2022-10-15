@@ -17,12 +17,12 @@ for root, dirs, files in os.walk("."):
         outfile = os.path.join(dst_path,f)
         try:
             # open image
-            im = Image.open(infile)
-            # modify image
-            new_im = im.resize((128,128))
-            new_im = im.rotate(-90)
-            new_im = im.convert('RGB')
-            # save image as JPEG in correct directory
-            new_im = im.save(outfile + ".jpg")
+            with Image.open(infile) as im:
+                # modify image
+                new_im = im.resize((128,128))
+                new_im = new_im.rotate(-90)
+                new_im = new_im.convert('RGB')
+                # save image as JPEG in correct directory
+                new_im = new_im.save(outfile + ".jpg")
         except OSError:
             print("cannot convert", infile)
