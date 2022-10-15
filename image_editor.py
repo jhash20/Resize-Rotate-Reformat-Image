@@ -9,7 +9,7 @@ dst_path = "/opt/icons/"
 
 os.chdir(src_path)
 # iterate over files in that directory
-for root, dirs, files in os.walk(".")
+for root, dirs, files in os.walk("."):
     for file in files:
         # splits the path name into a pair root and ext
         f, e = os.path.splitext(file)
