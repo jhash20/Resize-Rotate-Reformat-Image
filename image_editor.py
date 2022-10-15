@@ -7,7 +7,7 @@ from PIL import Image
 src_path = os.path.expanduser('~') + "/images/"
 dst_path = "/opt/icons/"
 
-os.chdir(directory)
+os.chdir(src_path)
 # iterate over files in that directory
 for root, dirs, files in os.walk(".")
     for file in files:
